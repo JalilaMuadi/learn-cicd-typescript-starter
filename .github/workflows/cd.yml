@@ -26,7 +26,8 @@ jobs:
 
       - name: Build app
         run: npm run build
-
+      
+        #Run database migrations
       - name: Run migrations
         run: npm run db:migrate
 
