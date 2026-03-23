@@ -18,14 +18,16 @@ jobs:
         with:
           node-version: 22
 
-      - name: ÷Install dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Run Tests
+      - name: Run unit tests
         run: npm run test -- --coverage
+
   style:
     name: Style
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -38,9 +40,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check Formatting
+      - name: Check formatting
         run: npm run format:check
 
-      - name: check linting
+      - name: Check linting
         run: npm run lint -- --max-warnings=0
-        
